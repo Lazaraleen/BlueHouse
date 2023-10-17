@@ -1,0 +1,10 @@
+[
+    {
+        "id": "0",
+        "image": "../appartements/appart1.jpg",
+        "name": "Bernards",
+        "city": "Pau",
+        "price": "450",
+        "coord": ""
+    }
+]

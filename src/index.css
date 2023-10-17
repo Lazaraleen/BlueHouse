@@ -1,13 +1,160 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary: #00B8F5;
+  --text: #000;
+  --price: #ff0000;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  line-height: 1em;
+  font-family: 'Taprom', 'Suez One', 'Helvetica Neue', sans-serif;
+}
+
+
+/* ****************************************************** HEADER ****************************************************** */
+
+header {
+  margin: 20px auto;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logoDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logoDiv img {
+  width: 100px;
+  margin-right: 40px;
+}
+
+.connect {
+  width: 50px;
+  height: 50px;
+}
+
+header h1 {
+  color: var(--primary);
+  font-size: 36px;
+}
+
+header h2 {
+  color: var(--primary);
+  font-size: 24px;
+}
+
+/* ****************************************************** MAIN ****************************************************** */
+
+main {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* ****************************************************** CARTE ****************************************************** */
+
+.leaflet-container {
+  height: 520px;
+  width: 50%; 
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* ****************************************************** SECTION ****************************************************** */
+
+section {
+  width: 45%;
+}
+
+.buttonSection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cardSection {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 48% 48%;
+}
+
+/* ****************************************************** BOUTON ****************************************************** */
+
+.boutonTri {
+  height: 50px;
+  width: 30%;
+  border-radius: 20px;
+  border-color: transparent;
+  background-color: var(--primary);
+}
+
+.boutonTri p {
+  font-family: 'Suez One';
+  font-size: 20px;
+  color: white;
+}
+
+/* ****************************************************** CARDS ****************************************************** */
+
+.card {
+  height: 180px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: solid 1px rgb(145, 145, 145);
+  contain: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.appartement {
+  width: 100%;
+  height: 125px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.barre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px 0;
+}
+
+.price {
+  font-family: 'Suez One';
+  font-size: 14;
+  color: var(--price);
+}
+
+/* ****************************************************** FOOTER ****************************************************** */
+
+footer {
+  background-color: var(--primary);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+footer div {
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  color: white;
+  font-size: 16px;
+  font-family: 'Suez One';
 }
