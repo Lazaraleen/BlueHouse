@@ -3,8 +3,99 @@
         "id": "0",
         "image": "../appartements/appart1.jpg",
         "name": "Bernards",
+        "type": "Maison",
+        "pieces": "6",
+        "surface": "130",
         "city": "Pau",
         "price": "450",
-        "coord": ""
+        "coord": [43.30254481174815, -0.36121328213112874]
+    },
+    {
+        "id": "1",
+        "image": "../appartements/appart2.jpg",
+        "name": "D'Artagnan",
+        "type": "Appart",
+        "pieces": "3",
+        "surface": "90",
+        "city": "Lupiac",
+        "price": "350",
+        "coord": [43.68115631299764, 0.18171488363259414]
+    },
+    {
+        "id": "2",
+        "image": "../appartements/appart3.jpg",
+        "name": "Etudiant",
+        "type": "Appart",
+        "pieces": "2",
+        "surface": "50",
+        "city": "Pau",
+        "price": "450",
+        "coord": [43.313068103729506, -0.3717993589222317]
+    },
+    {
+        "id": "3",
+        "image": "../appartements/appart4.jpg",
+        "name": "Laurent",
+        "type": "Maison",
+        "pieces": "7",
+        "surface": "150",
+        "city": "Tarbes",
+        "price": "380",
+        "coord": [43.23590600431086, 0.0753820521878481]
+    },
+    {
+        "id": "4",
+        "image": "../appartements/appart5.jpg",
+        "name": "Phillips",
+        "type": "Appart",
+        "pieces": "4",
+        "surface": "85",
+        "city": "Pau",
+        "price": "375",
+        "coord": [43.315382387335205, -0.35567651106313747]
+    },
+    {
+        "id": "5",
+        "image": "../appartements/appart6.jpg",
+        "name": "Sanchez",
+        "type": "Appart",
+        "pieces": "4",
+        "surface": "93",
+        "city": "Tarbes",
+        "price": "410",
+        "coord": [43.23222234614687, 0.08302935838295866]
+    },
+    {
+        "id": "6",
+        "image": "../appartements/appart7.jpg",
+        "name": "Dupond",
+        "type": "Appart",
+        "pieces": "2",
+        "surface": "65",
+        "city": "Pau",
+        "price": "420",
+        "coord": [43.31921273205393, -0.3406504555750587]
+    },
+    {
+        "id": "7",
+        "image": "../appartements/appart8.jpg",
+        "name": "Mozart",
+        "type": "Maison",
+        "pieces": "6",
+        "surface": "135",
+        "city": "Tarbes",
+        "price": "490",
+        "coord": [43.228584515205824, 0.07317002147030394]
+    },
+    {
+        "id": "8",
+        "image": "../appartements/appart9.jpg",
+        "name": "Sofian",
+        "type": "Maison",
+        "pieces": "5",
+        "surface": "118",
+        "city": "Aire/Adour",
+        "price": "320",
+        "coord": [43.702313904833886, -0.26494727778842275]
     }
 ]

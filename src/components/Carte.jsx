@@ -5,6 +5,7 @@ import { TileLayer } from "react-leaflet";
 import {Marker} from "react-leaflet";
 import {Popup} from "react-leaflet";
 import {Icon} from "leaflet";
+import appartement from '../json/appartements.json';
 
 function Map() {
     const customIcon = new Icon({
@@ -12,16 +13,18 @@ function Map() {
         iconSize: [40, 40]
     })
   return (
-    <MapContainer center={[43.3025, -0.3612]} zoom={15} scrollWheelZoom={false}>
+    <MapContainer center={[43.3025, -0.3612]} zoom={9} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[43.30254481174815, -0.36121328213112874]} icon={customIcon}>
-        <Popup>
-          TEST
-        </Popup>
-      </Marker>
+      {appartement.map((item) => (
+        <Marker key={item.id+"A"} position={item.coord} icon={customIcon}>
+          <Popup>
+          {item.name}
+          </Popup>
+        </Marker>
+      ))}
     </MapContainer>
   );
 }

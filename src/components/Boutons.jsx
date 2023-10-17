@@ -2,8 +2,9 @@ import '../index.css';
 
 
 function Boutons(props) {
+
   return (
-    <button className="boutonTri">
+    <button className="boutonTri shadow" onClick={props.tri}>
         <p>{props.title}</p>
     </button>
   );
