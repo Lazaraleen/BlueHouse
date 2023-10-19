@@ -1,54 +1,58 @@
 import React, { useState } from 'react';
+import {useContext} from "react";
+import {Context} from "../App";
 import '../index.css';
 import Boutons from './Boutons';
 import Cards from './Cards';
-import appartement from '../json/appartements.json';
+// import appartement from '../json/appartements.json';
 
 function Section() {
-  const [sortedAppartements, setSortedAppartements] = useState(appartement);
+  const [locationVisible, setLocationVisible] = useContext(Context);
+  console.log("vous êtes ici:", locationVisible);
+  // console.log("vos apparts sont ici:", appartement);
   const [sortType, setSortType] = useState(null);
 
   const handleType = () => {
     if (sortType === 'type') {
-      setSortedAppartements([...sortedAppartements].reverse());
+      setLocationVisible([...locationVisible].reverse());
     } else {
-      setSortedAppartements([...sortedAppartements].sort((a, b) => a.type.localeCompare(b.type)));
+      setLocationVisible([...locationVisible].sort((a, b) => a.type.localeCompare(b.type)));
       setSortType('type');
     }
   };
 
   const handlePrix = () => {
     if (sortType === 'price') {
-      setSortedAppartements([...sortedAppartements].reverse());
+      setLocationVisible([...locationVisible].reverse());
     } else {
-      setSortedAppartements([...sortedAppartements].sort((a, b) => a.price - b.price));
+      setLocationVisible([...locationVisible].sort((a, b) => a.price - b.price));
       setSortType('price');
     };
   };
 
   const handleCity = () => {
     if (sortType === 'city') {
-      setSortedAppartements([...sortedAppartements].reverse());
+      setLocationVisible([...locationVisible].reverse());
     } else {
-      setSortedAppartements([...sortedAppartements].sort((a, b) => a.city.localeCompare(b.city)));
+      setLocationVisible([...locationVisible].sort((a, b) => a.city.localeCompare(b.city)));
       setSortType('city');
     }
   };
 
   const handlePiece = () => {
     if (sortType === 'piece') {
-      setSortedAppartements([...sortedAppartements].reverse());
+      setLocationVisible([...locationVisible].reverse());
     } else {
-      setSortedAppartements([...sortedAppartements].sort((a, b) => a.piece - b.piece));
+      setLocationVisible([...locationVisible].sort((a, b) => parseInt(a.pieces) - parseInt(b.pieces)));
       setSortType('piece');
     };
   };
 
   const handleSurface = () => {
     if (sortType === 'surface') {
-      setSortedAppartements([...sortedAppartements].reverse());
+      setLocationVisible([...locationVisible].reverse());
     } else {
-      setSortedAppartements([...sortedAppartements].sort((a, b) => a.surface - b.surface));
+      setLocationVisible([...locationVisible].sort((a, b) => parseInt(a.pieces) - parseInt(b.pieces)));
       setSortType('surface');
     };
   };
@@ -66,7 +70,7 @@ function Section() {
             <Boutons title="FAVORIS" />
         </div>
         <div className="cardSection">
-        {sortedAppartements.map((item) => (
+        {locationVisible.map((item) => (
                 <Cards key={item.id} image={item.image} city={item.city} name={item.name} pieces={item.pieces} surface={item.surface} price={item.price} type={item.type} isFavorite={item.isFavorite} />
             ))}
         </div>

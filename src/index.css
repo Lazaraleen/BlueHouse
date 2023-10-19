@@ -19,7 +19,6 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: 'Taprom';
 }
 
 .logoDiv {
@@ -41,11 +40,13 @@ header {
 header h1 {
   color: var(--primary);
   font-size: 36px;
+  font-family: 'Taprom';
 }
 
 header h2 {
   color: var(--primary);
   font-size: 24px;
+  font-family: 'Taprom';
 }
 
 /* ****************************************************** MAIN ****************************************************** */
