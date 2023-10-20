@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../index.css';
+import {Context} from "../App";
 import Coeur from '../assets/images/coeur.png';
 
 function Cards(props) {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(props.favori);
+  const [locationVisible, setLocationVisible] = useContext(Context);
+  console.log("favoris", isFavorite);
 
   const toggleFavorite = () => {
-    setIsFavorite(!isFavorite);
+    const newIsFavorite = !isFavorite;
+    setIsFavorite(newIsFavorite);
+
+    // Mettez à jour la liste locationVisible pour refléter la nouvelle valeur "favori".
+    const updatedLocationVisible = locationVisible.map((item) => {
+      if (item.id === props.id) {
+        return { ...item, favori: newIsFavorite };
+      }
+      return item;
+    });
+
+    setLocationVisible(updatedLocationVisible);
+    console.log("Appart favoris", updatedLocationVisible);
   };
 
   const favoriteClass = isFavorite ? "favori" : "";

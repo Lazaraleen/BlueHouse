@@ -4,13 +4,17 @@ import {Context} from "../App";
 import '../index.css';
 import Boutons from './Boutons';
 import Cards from './Cards';
-// import appartement from '../json/appartements.json';
 
 function Section() {
   const [locationVisible, setLocationVisible] = useContext(Context);
-  console.log("vous êtes ici:", locationVisible);
-  // console.log("vos apparts sont ici:", appartement);
   const [sortType, setSortType] = useState(null);
+  const [originalLocationVisible] = useState(locationVisible);
+  const [isFilteredByFavorite, setIsFilteredByFavorite] = useState(false);
+  
+  // useEffect(() => {
+  //   // Mettez à jour la valeur d'origine de locationVisible lorsque la valeur initiale change
+  //   setOriginalLocationVisible(locationVisible);
+  // }, [locationVisible]);
 
   const handleType = () => {
     if (sortType === 'type') {
@@ -57,6 +61,33 @@ function Section() {
     };
   };
 
+  const updateFavorite = (id, isFavorite) => {
+    // Mettez à jour la liste locationVisible pour refléter la nouvelle valeur "favori".
+    const updatedLocationVisible = locationVisible.map((item) => {
+      if (item.id === id) {
+        return { ...item, favori: isFavorite };
+      }
+      return item;
+    });
+    setLocationVisible(updatedLocationVisible);
+  };
+
+  const handleFavorite = () => {
+    console.log(isFilteredByFavorite);
+    if (isFilteredByFavorite) {
+      // Si la liste est déjà filtrée par favoris, réinitialisez-la à la valeur d'origine
+      setLocationVisible(originalLocationVisible);
+      setIsFilteredByFavorite(false); // Mettez à jour l'état local
+    } else {
+      // Sinon, filtrez par favoris
+      const favoriTrueItems = locationVisible.filter((item) => item.favori === true);
+      setLocationVisible(favoriTrueItems);
+      setIsFilteredByFavorite(true); // Mettez à jour l'état local
+    }
+    console.log("liste originale: ", originalLocationVisible);
+    console.log("liste modif: ", locationVisible);
+  };
+
   return (
     <section>
         <div className="buttonSection">
@@ -67,11 +98,11 @@ function Section() {
         <div className="buttonSection">
             <Boutons title="NB PIECES" tri={handlePiece} />
             <Boutons title="SURFACE" tri={handleSurface} />
-            <Boutons title="FAVORIS" />
+            <Boutons title="FAVORIS" tri={handleFavorite} />
         </div>
         <div className="cardSection">
         {locationVisible.map((item) => (
-                <Cards key={item.id} image={item.image} city={item.city} name={item.name} pieces={item.pieces} surface={item.surface} price={item.price} type={item.type} isFavorite={item.isFavorite} />
+                <Cards key={item.id} id={item.id} image={item.image} city={item.city} name={item.name} pieces={item.pieces} surface={item.surface} price={item.price} type={item.type} favori={item.favori} updateFavorite={updateFavorite}/>
             ))}
         </div>
     </section>
