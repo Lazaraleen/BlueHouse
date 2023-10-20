@@ -15,8 +15,11 @@ npm install
 ```
 
 ( Les dépendances de leaflet sont utiles pour afficher la carte. Si elle n'apparait pas, il faut les installer:
-npm install leaflet
-npm install react-leaflet )
+```bash
+npm install leaflet    
+npm install react-leaflet
+```
+ )
 
 ## ☁️ Start
 Pour lancer le projet sur votre navigateur:
